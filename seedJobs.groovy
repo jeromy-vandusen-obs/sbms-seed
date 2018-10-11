@@ -5,20 +5,18 @@ def appProjects = [
   'sbms-greeting',
 ]
 
-def infraProjects = [
-  'sbms-jenkins',
+def testProjects = [
   'sbms-test'
 ]
 
 def pipelineProjects = [
-  'sbms-pipeline-dev',
+  'sbms-pipeline-dev-up',
   'sbms-pipeline-dev-down',
-  'sbms-pipeline-test',
+  'sbms-pipeline-test-up',
   'sbms-pipeline-test-down',
-  'sbms-pipeline-uat',
+  'sbms-pipeline-uat-up',
   'sbms-pipeline-uat-down',
-  'sbms-pipeline-uat-passed',
-  'sbms-pipeline-prod',
+  'sbms-pipeline-prod-up',
   'sbms-pipeline-prod-down'
 ]
 
@@ -26,7 +24,7 @@ appProjects.each { projectName ->
   createPipelineJob(projectName, projectName, 'Jenkinsfile')
 }
 
-infraProjects.each { projectName ->
+testProjects.each { projectName ->
   createPipelineJob(projectName, projectName, 'Jenkinsfile')
 }
 
